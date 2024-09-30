@@ -1,27 +1,23 @@
 def is_leap_year(year):
-    result1 = False
-    result2 = False
-    result3 = False
-    result_final = False
-
-    if year % 4 != 0:
-        result1 = False
-        if year % 100 == 0:
-            result2 = True
-            if year % 400 != 0:
-                result3 = False
-            else:
-                result3 = True
+    result = None
+    if year % 4 == 0:
+        # continue logic part
+        if year % 100 != 0:
+            # continue logic part
+            result = True
+            return result
         else:
-            result2 = False
+            if year % 400 == 0:
+                # continue logic part
+                result = True
+                return result
+            else:
+                result = False
+                return result
     else:
-        result1 = True
+        result = False
+        return result
 
-    if not (result1 and result3):
-        result_final == True
-    else:
-        result_final == False
-        
-    return result_final
-
-print(is_leap_year(2000))
+# print(f"Is 2000 Leap Year? {is_leap_year(2000)}.")
+year_to_test = int(input(f"Which year do you want to test? "))
+print(f"Is {year_to_test} Leap Year? {is_leap_year(year_to_test)}.")
